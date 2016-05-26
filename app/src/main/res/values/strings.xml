@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">POC_MVP</string>
+    <string name="hint_github_username">Github User</string>
+    <string name="button_search">Search</string>
+    <string name="progress_dialog_please_wait">Please wait...</string>
+    <string name="title_activity_repository_list">RepositoryListActivity</string>
+</resources>

@@ -2,7 +2,10 @@ package com.rohan.poc_mvp.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Typeface;
 
+import com.norbsoft.typefacehelper.TypefaceCollection;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 import com.rohan.poc_mvp.communication.EventManager;
 import com.rohan.poc_mvp.communication.bus.BusProvider;
 import com.squareup.otto.Bus;
@@ -24,11 +27,11 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-//        TypefaceCollection typeface = new TypefaceCollection.Builder()
-//        .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(), "fonts/gotham/Gotham-Rounded-Book.ttf"))
-//        .set(Typeface.BOLD, Typeface.createFromAsset(getAssets(), "fonts/gotham/Gotham-Rounded-Bold.ttf"))
-//        .create();
-//        TypefaceHelper.init(typeface);
+        TypefaceCollection typeface = new TypefaceCollection.Builder()
+        .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(), "fonts/gotham/Gotham-Rounded-Book.ttf"))
+        .set(Typeface.BOLD, Typeface.createFromAsset(getAssets(), "fonts/gotham/Gotham-Rounded-Bold.ttf"))
+        .create();
+        TypefaceHelper.init(typeface);
 
         App.context = getApplicationContext();
 

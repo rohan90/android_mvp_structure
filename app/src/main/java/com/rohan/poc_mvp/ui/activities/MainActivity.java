@@ -12,6 +12,7 @@ import com.rohan.poc_mvp.R;
 import com.rohan.poc_mvp.application.Constants;
 import com.rohan.poc_mvp.presenter.interfaces.IMainView;
 import com.rohan.poc_mvp.presenter.MainPresenter;
+import com.rohan.poc_mvp.utils.FontUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -34,6 +35,8 @@ public class MainActivity extends BaseActivity implements IMainView {
         ButterKnife.inject(this);
         initPresenter();
         initToolbar();
+
+        FontUtils.init(this);
     }
 
     private void initToolbar() {
@@ -79,5 +82,13 @@ public class MainActivity extends BaseActivity implements IMainView {
     @Override
     public Context getContext() {
         return this;
+    }
+
+    /**
+     *
+     */
+    public static Intent newIntent(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        return intent;
     }
 }

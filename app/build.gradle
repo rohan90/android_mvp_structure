@@ -33,7 +33,7 @@ dependencies {
     compile dependencies.recyclerView
 //    compile dependencies.picasso
 //    compile dependencies.circleImageView
-//    compile dependencies.typeFaceHelper
+    compile dependencies.typeFaceHelper
 
     //comm framework start
     compile dependencies.retrofit

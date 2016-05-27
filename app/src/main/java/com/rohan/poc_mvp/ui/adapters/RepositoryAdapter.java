@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.rohan.poc_mvp.R;
 import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.utils.FontUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -50,6 +51,7 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.Re
                 }
             }
         });
+
         return viewHolder;
     }
 
@@ -90,6 +92,8 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.Re
             tvWatchers = (TextView) itemView.findViewById(R.id.tv_repository_watchers);
             tvStars = (TextView) itemView.findViewById(R.id.tv_repository_stars);
             tvForks = (TextView) itemView.findViewById(R.id.tv_repository_forks);
+
+            FontUtils.init(contentLayout);
         }
     }
 

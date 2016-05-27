@@ -16,6 +16,7 @@ import com.rohan.poc_mvp.model.Repository;
 import com.rohan.poc_mvp.presenter.RepositoryListPresenter;
 import com.rohan.poc_mvp.presenter.interfaces.IRepositoryListView;
 import com.rohan.poc_mvp.ui.adapters.RepositoryAdapter;
+import com.rohan.poc_mvp.utils.FontUtils;
 
 import java.util.List;
 
@@ -52,6 +53,8 @@ public class RepositoryListActivity extends BaseActivity implements IRepositoryL
         initPresenter();
         initRecyclerView();
         loadRepositories();
+
+        FontUtils.init(this);
     }
 
     private void initRecyclerView() {

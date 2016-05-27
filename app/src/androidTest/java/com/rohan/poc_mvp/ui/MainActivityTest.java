@@ -1,5 +1,6 @@
 package com.rohan.poc_mvp.ui;
 
+import android.support.test.espresso.Espresso;
 import android.support.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -26,20 +27,21 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
-    private MainActivity mainActivity;
+    private MainActivity activity;
 
     @Rule
     public final ActivityRule<MainActivity> rule = new ActivityRule<>(MainActivity.class);
 
     @Before
     public void init() {
-        mainActivity = rule.get();
+        activity = rule.get();
     }
 
     @Test
     public void shouldLaunchRepositoryListActivity(){
         onView(withId(R.id.et_github_username)).perform(typeText("username"));
         onView(withId(R.id.btn_search)).perform(click());
-        onView(withId(R.id.tv_username)).check(matches(isDisplayed()));
+        onView(withId(R.id.toolbar)).check(matches(isDisplayed()));
+
     }
 }

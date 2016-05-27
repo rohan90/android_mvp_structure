@@ -11,7 +11,7 @@ import com.squareup.otto.Subscribe;
 /**
  * Created by rohan on 27/5/16.
  */
-public class RepositoryPresenter implements BasePresenter<IRepositoryListView> {
+public class RepositoryListPresenter implements BasePresenter<IRepositoryListView> {
     private IRepositoryListView view;
     private Bus mBus = BusProvider.getInstance();
 

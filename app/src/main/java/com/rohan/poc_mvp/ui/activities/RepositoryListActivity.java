@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.rohan.poc_mvp.R;
 import com.rohan.poc_mvp.application.Constants;
 import com.rohan.poc_mvp.model.Repository;
-import com.rohan.poc_mvp.presenter.RepositoryPresenter;
+import com.rohan.poc_mvp.presenter.RepositoryListPresenter;
 import com.rohan.poc_mvp.presenter.interfaces.IRepositoryListView;
 import com.rohan.poc_mvp.ui.adapters.RepositoryAdapter;
 
@@ -24,7 +24,7 @@ import butterknife.InjectView;
 
 public class RepositoryListActivity extends BaseActivity implements IRepositoryListView {
 
-    private RepositoryPresenter presenter;
+    private RepositoryListPresenter presenter;
 
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
@@ -68,7 +68,7 @@ public class RepositoryListActivity extends BaseActivity implements IRepositoryL
     }
 
     private void initPresenter() {
-        presenter = new RepositoryPresenter();
+        presenter = new RepositoryListPresenter();
         presenter.attachView(this);
     }
 

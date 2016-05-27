@@ -29,8 +29,8 @@ dependencies {
     compile dependencies.appCompat
     compile dependencies.support
     compile dependencies.design
-//    compile dependencies.cardView
-//    compile dependencies.recyclerView
+    compile dependencies.cardView
+    compile dependencies.recyclerView
 //    compile dependencies.picasso
 //    compile dependencies.circleImageView
 //    compile dependencies.typeFaceHelper

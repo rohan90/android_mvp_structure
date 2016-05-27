@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="com.rohan.poc_mvp.ui.activities.RepositoryListActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -23,25 +24,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_height="fill_parent"
         >
 
         <TextView
-            android:id="@+id/tv_username"
+            android:id="@+id/tv_error_no_repos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/error_no_repos"
+            android:gravity="center"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_repositories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
-            android:gravity="center"/>
+            tools:listitem="@layout/row_repository">
+        </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
-
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

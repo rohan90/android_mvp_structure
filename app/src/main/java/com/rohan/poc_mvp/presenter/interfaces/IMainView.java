@@ -1,4 +1,4 @@
-package com.rohan.poc_mvp.presenter;
+package com.rohan.poc_mvp.presenter.interfaces;
 
 /**
  * Created by rohan on 26/5/16.

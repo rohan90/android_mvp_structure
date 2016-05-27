@@ -4,4 +4,5 @@
     <string name="button_search">Search</string>
     <string name="progress_dialog_please_wait">Please wait...</string>
     <string name="title_activity_repository_list">RepositoryListActivity</string>
+    <string name="error_no_repos">No repositories to show...</string>
 </resources>

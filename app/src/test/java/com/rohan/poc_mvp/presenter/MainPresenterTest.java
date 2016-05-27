@@ -1,5 +1,7 @@
 package com.rohan.poc_mvp.presenter;
 
+import com.rohan.poc_mvp.presenter.interfaces.IMainView;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

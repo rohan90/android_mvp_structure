@@ -3,12 +3,14 @@ package com.rohan.poc_mvp.ui.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.rohan.poc_mvp.R;
 import com.rohan.poc_mvp.application.Constants;
-import com.rohan.poc_mvp.presenter.IMainView;
+import com.rohan.poc_mvp.presenter.interfaces.IMainView;
 import com.rohan.poc_mvp.presenter.MainPresenter;
 
 import butterknife.ButterKnife;
@@ -22,14 +24,21 @@ public class MainActivity extends BaseActivity implements IMainView {
     @InjectView(R.id.et_github_username)
     EditText etGithubUserName;
 
+    @InjectView(R.id.toolbar)
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ButterKnife.inject(this);
-
         initPresenter();
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        setSupportActionBar(toolbar);
+        setTitle(getString(R.string.app_name));
     }
 
     private void initPresenter() {
@@ -52,7 +61,7 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     public void showMessage(String message) {
-        toast(message);
+        snack(toolbar,message,R.color.notification_error,Snackbar.LENGTH_LONG);
     }
 
     @Override

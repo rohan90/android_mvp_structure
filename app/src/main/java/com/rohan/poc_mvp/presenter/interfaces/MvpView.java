@@ -1,4 +1,4 @@
-package com.rohan.poc_mvp.presenter;
+package com.rohan.poc_mvp.presenter.interfaces;
 
 import android.content.Context;
 

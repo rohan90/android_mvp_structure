@@ -1,5 +1,8 @@
 package com.rohan.poc_mvp.presenter;
 
+import com.rohan.poc_mvp.presenter.interfaces.BasePresenter;
+import com.rohan.poc_mvp.presenter.interfaces.IMainView;
+
 /**
  * Created by rohan on 26/5/16.
  */

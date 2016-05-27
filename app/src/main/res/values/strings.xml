@@ -5,4 +5,8 @@
     <string name="progress_dialog_please_wait">Please wait...</string>
     <string name="title_activity_repository_list">RepositoryListActivity</string>
     <string name="error_no_repos">No repositories to show...</string>
+
+    <string name="text_stars">%d \nStars</string>
+    <string name="text_watchers">%d \nWatchers</string>
+    <string name="text_forks">%d \nForks</string>
 </resources>

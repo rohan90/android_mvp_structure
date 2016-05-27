@@ -3,10 +3,12 @@ package com.rohan.poc_mvp.communication;
 import com.google.gson.Gson;
 import com.rohan.poc_mvp.communication.api.ApiConstants;
 import com.rohan.poc_mvp.communication.api.interfaces.IGithub;
+import com.rohan.poc_mvp.model.Repository;
 import com.rohan.poc_mvp.model.dtos.RepositoryListResponseDto;
 import com.rohan.poc_mvp.utils.GsonUtils;
 import com.squareup.okhttp.OkHttpClient;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import retrofit.Callback;
@@ -47,8 +49,14 @@ public class RestClient implements IGithub {
      * linking of interface to rest-client
      */
 
+//    @Override
+//    public void getRepositories(String username,Callback<RepositoryListResponseDto> callback) {
+//        IGithub service = mRestAdapter.create(IGithub.class);
+//        service.getRepositories(username, callback);
+//    }
+
     @Override
-    public void getRepositories(String username,Callback<RepositoryListResponseDto> callback) {
+    public void getRepositories(String username,Callback<List<Repository>> callback) {
         IGithub service = mRestAdapter.create(IGithub.class);
         service.getRepositories(username, callback);
     }

@@ -38,7 +38,7 @@
             android:id="@+id/rv_repositories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/row_repository">
+            tools:listitem="@layout/row_item_repository">
         </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 

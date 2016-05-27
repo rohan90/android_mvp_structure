@@ -18,7 +18,6 @@
         </activity>
         <activity
             android:name=".ui.activities.RepositoryListActivity"
-            android:label="@string/title_activity_repository_list"
             android:parentActivityName=".ui.activities.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data

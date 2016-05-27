@@ -12,7 +12,7 @@
     card_view:cardCornerRadius="2dp">
 
     <LinearLayout
-        android:id="@+id/container_product"
+        android:id="@+id/container_repository"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/selectableItemBackground"
@@ -72,7 +72,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/secondary_text"
-                tools:text="Star \n5" />
+                tools:text="Stars \n5" />
 
             <TextView
                 android:id="@+id/tv_repository_forks"
@@ -82,6 +82,15 @@
                 android:gravity="center"
                 android:textColor="@color/secondary_text"
                 tools:text="Forks \n5" />
+
+            <TextView
+                android:id="@+id/tv_repository_watchers"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/secondary_text"
+                tools:text="Watchers \n5" />
 
         </LinearLayout>
 

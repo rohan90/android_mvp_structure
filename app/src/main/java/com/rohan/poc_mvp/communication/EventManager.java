@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.rohan.poc_mvp.communication.events.FetchedRepositoryListEvent;
 import com.rohan.poc_mvp.communication.events.GetRepositoriesEvent;
+import com.rohan.poc_mvp.model.Repository;
 import com.rohan.poc_mvp.model.RestResponse;
 import com.rohan.poc_mvp.model.dtos.RepositoryListResponseDto;
 import com.rohan.poc_mvp.utils.GsonUtils;
@@ -11,6 +12,8 @@ import com.rohan.poc_mvp.utils.Logger;
 import com.rohan.poc_mvp.utils.MiscUtils;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
+
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -35,15 +38,36 @@ public class EventManager {
      * listening to events
      */
 
+//    @Subscribe
+//    public void onGetRepositoriesEvent(GetRepositoriesEvent event) {
+//        Callback<RepositoryListResponseDto> callback = new Callback<RepositoryListResponseDto>() {
+//
+//            @Override
+//            public void success(RepositoryListResponseDto restResponse, Response response) {
+//                Logger.logInfo("response:" + response.toString());
+//                Logger.logInfo("repos:" + restResponse.toString());
+//                mBus.post(new FetchedRepositoryListEvent(restResponse.getData(), true, ""));
+//            }
+//
+//            @Override
+//            public void failure(RetrofitError error) {
+//                String extraMessage = getExtraMessage(error);
+//                String errorMessage = getErrorMessage(error);
+//                mBus.post(new FetchedRepositoryListEvent(null, false, errorMessage + extraMessage));
+//            }
+//        };
+//        mRestClient.getRepositories(event.getUsername(),callback);
+//    }
+
     @Subscribe
     public void onGetRepositoriesEvent(GetRepositoriesEvent event) {
-        Callback<RepositoryListResponseDto> callback = new Callback<RepositoryListResponseDto>() {
+        Callback<List<Repository>> callback = new Callback<List<Repository>>() {
 
             @Override
-            public void success(RepositoryListResponseDto restResponse, Response response) {
+            public void success(List<Repository> restResponse, Response response) {
                 Logger.logInfo("response:" + response.toString());
                 Logger.logInfo("repos:" + restResponse.toString());
-                mBus.post(new FetchedRepositoryListEvent(restResponse.getData(), true, ""));
+                mBus.post(new FetchedRepositoryListEvent(restResponse, true, ""));
             }
 
             @Override
@@ -53,7 +77,7 @@ public class EventManager {
                 mBus.post(new FetchedRepositoryListEvent(null, false, errorMessage + extraMessage));
             }
         };
-        mRestClient.getRepositories(event.getUsername(),callback);
+        mRestClient.getRepositories(event.getUsername(), callback);
     }
 
 

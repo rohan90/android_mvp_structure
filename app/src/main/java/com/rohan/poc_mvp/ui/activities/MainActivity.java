@@ -55,6 +55,12 @@ public class MainActivity extends BaseActivity implements IMainView {
         return etGithubUserName.getText().toString();
     }
 
+    @Override
+    protected void onDestroy() {
+        presenter.dettachView();
+        super.onDestroy();
+    }
+
     /**
      * Contracts...
      */
@@ -66,8 +72,7 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     public void goToSearchScreen() {
-        Intent intent = new Intent(this, RepositoryListActivity.class);
-        intent.putExtra(Constants.BUNDLE_KEYS.GITHUB_USERNAME,getEditTextEntry());
+        Intent intent = RepositoryListActivity.newIntent(this,getEditTextEntry());
         startActivity(intent);
     }
 

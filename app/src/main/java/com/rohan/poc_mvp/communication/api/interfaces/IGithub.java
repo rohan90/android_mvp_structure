@@ -1,6 +1,9 @@
 package com.rohan.poc_mvp.communication.api.interfaces;
 
+import com.rohan.poc_mvp.model.Repository;
 import com.rohan.poc_mvp.model.dtos.RepositoryListResponseDto;
+
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.http.GET;
@@ -11,6 +14,9 @@ import retrofit.http.Path;
  */
 public interface IGithub {
 
+//    @GET("/users/{username}/repos")
+//    void getRepositories(@Path("username") String username, Callback<RepositoryListResponseDto> callback);
+
     @GET("/users/{username}/repos")
-    void getRepositories(@Path("username") String username, Callback<RepositoryListResponseDto> callback);
+    void getRepositories(@Path("username") String username, Callback<List<Repository>> callback);
 }

@@ -24,16 +24,22 @@ import butterknife.InjectView;
 
 public class RepositoryListActivity extends BaseActivity implements IRepositoryListView {
 
-    private RepositoryListPresenter presenter;
-
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
-
     @InjectView(R.id.tv_error_no_repos)
     TextView tvErrorMessage;
-
     @InjectView(R.id.rv_repositories)
     RecyclerView rvRepositories;
+    private RepositoryListPresenter presenter;
+
+    /**
+     *
+     */
+    public static Intent newIntent(Context context, String username) {
+        Intent intent = new Intent(context, RepositoryListActivity.class);
+        intent.putExtra(Constants.BUNDLE_KEYS.GITHUB_USERNAME, username);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +68,7 @@ public class RepositoryListActivity extends BaseActivity implements IRepositoryL
 
     private void loadRepositories() {
         String username = getIntent().getStringExtra(Constants.BUNDLE_KEYS.GITHUB_USERNAME);
-        setTitle("Repos for : "+username); //TODO take this out [strings and seperate init]
+        setTitle("Repos for : " + username); //TODO take this out [strings and seperate init]
         presenter.getRepositories(username);
         showProgress();
     }
@@ -84,7 +90,6 @@ public class RepositoryListActivity extends BaseActivity implements IRepositoryL
     }
 
     /**
-     *
      * Contract...
      */
 
@@ -105,21 +110,11 @@ public class RepositoryListActivity extends BaseActivity implements IRepositoryL
         hideProgress();
         tvErrorMessage.setVisibility(View.VISIBLE);
         rvRepositories.setVisibility(View.GONE);
-        snack(toolbar,message,R.color.notification_error, Snackbar.LENGTH_LONG);
+        snack(toolbar, message, R.color.notification_error, Snackbar.LENGTH_LONG);
     }
 
     @Override
     public Context getContext() {
         return this;
-    }
-
-
-    /**
-     *
-     */
-    public static Intent newIntent(Context context, String username) {
-        Intent intent = new Intent(context, RepositoryListActivity.class);
-        intent.putExtra(Constants.BUNDLE_KEYS.GITHUB_USERNAME, username);
-        return intent;
     }
 }

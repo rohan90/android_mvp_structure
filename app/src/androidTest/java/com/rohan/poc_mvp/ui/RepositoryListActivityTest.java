@@ -1,8 +1,9 @@
 package com.rohan.poc_mvp.ui;
 
 import com.rohan.poc_mvp.R;
+import com.rohan.poc_mvp.communication.bus.BusProvider;
+import com.rohan.poc_mvp.communication.events.FetchedRepositoryListEvent;
 import com.rohan.poc_mvp.model.Repository;
-import com.rohan.poc_mvp.ui.activities.MainActivity;
 import com.rohan.poc_mvp.ui.activities.RepositoryListActivity;
 import com.rohan.poc_mvp.utils.ActivityRule;
 
@@ -14,8 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -40,7 +39,9 @@ public class RepositoryListActivityTest {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                activity.showRepositories(getMockRepoList());
+//                activity.showRepositories(getMockRepoList());
+                BusProvider.getInstance().post(new FetchedRepositoryListEvent(getMockRepoList(),true,"Success"));
+
             }
         });
 

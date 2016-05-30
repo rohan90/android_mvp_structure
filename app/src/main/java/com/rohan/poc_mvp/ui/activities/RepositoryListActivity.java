@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.rohan.poc_mvp.R;
 import com.rohan.poc_mvp.application.Constants;
-import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.model.domain.Repository;
 import com.rohan.poc_mvp.presenter.RepositoryListPresenter;
 import com.rohan.poc_mvp.presenter.interfaces.IRepositoryListView;
 import com.rohan.poc_mvp.ui.adapters.RepositoryAdapter;

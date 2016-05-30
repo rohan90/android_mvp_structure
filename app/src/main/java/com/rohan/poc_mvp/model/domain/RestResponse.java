@@ -1,4 +1,4 @@
-package com.rohan.poc_mvp.model;
+package com.rohan.poc_mvp.model.domain;
 
 import com.google.gson.annotations.SerializedName;
 

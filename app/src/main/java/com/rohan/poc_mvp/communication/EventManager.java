@@ -4,9 +4,8 @@ import android.content.Context;
 
 import com.rohan.poc_mvp.communication.events.FetchedRepositoryListEvent;
 import com.rohan.poc_mvp.communication.events.GetRepositoriesEvent;
-import com.rohan.poc_mvp.model.Repository;
-import com.rohan.poc_mvp.model.RestResponse;
-import com.rohan.poc_mvp.model.dtos.RepositoryListResponseDto;
+import com.rohan.poc_mvp.model.domain.Repository;
+import com.rohan.poc_mvp.model.domain.RestResponse;
 import com.rohan.poc_mvp.utils.GsonUtils;
 import com.rohan.poc_mvp.utils.Logger;
 import com.rohan.poc_mvp.utils.MiscUtils;

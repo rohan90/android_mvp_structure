@@ -1,7 +1,7 @@
 package com.rohan.poc_mvp.presenter;
 
 import com.rohan.poc_mvp.communication.events.FetchedRepositoryListEvent;
-import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.model.domain.Repository;
 import com.rohan.poc_mvp.presenter.interfaces.IRepositoryListView;
 
 import org.junit.Before;

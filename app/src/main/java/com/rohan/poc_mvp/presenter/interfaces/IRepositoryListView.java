@@ -1,6 +1,6 @@
 package com.rohan.poc_mvp.presenter.interfaces;
 
-import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.model.domain.Repository;
 
 import java.util.List;
 

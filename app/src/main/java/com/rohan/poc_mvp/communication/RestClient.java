@@ -3,8 +3,7 @@ package com.rohan.poc_mvp.communication;
 import com.google.gson.Gson;
 import com.rohan.poc_mvp.communication.api.ApiConstants;
 import com.rohan.poc_mvp.communication.api.interfaces.IGithub;
-import com.rohan.poc_mvp.model.Repository;
-import com.rohan.poc_mvp.model.dtos.RepositoryListResponseDto;
+import com.rohan.poc_mvp.model.domain.Repository;
 import com.rohan.poc_mvp.utils.GsonUtils;
 import com.squareup.okhttp.OkHttpClient;
 

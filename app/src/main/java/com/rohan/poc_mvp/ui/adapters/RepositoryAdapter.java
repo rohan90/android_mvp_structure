@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rohan.poc_mvp.R;
-import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.model.domain.Repository;
 import com.rohan.poc_mvp.utils.FontUtils;
 
 import java.util.Collections;

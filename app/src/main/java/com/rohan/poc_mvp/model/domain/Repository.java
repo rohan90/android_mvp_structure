@@ -1,4 +1,4 @@
-package com.rohan.poc_mvp.model;
+package com.rohan.poc_mvp.model.domain;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,15 +1,18 @@
 package com.rohan.poc_mvp.ui;
 
+import android.support.test.runner.AndroidJUnit4;
+
 import com.rohan.poc_mvp.R;
 import com.rohan.poc_mvp.communication.bus.BusProvider;
 import com.rohan.poc_mvp.communication.events.FetchedRepositoryListEvent;
-import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.model.domain.Repository;
 import com.rohan.poc_mvp.ui.activities.RepositoryListActivity;
 import com.rohan.poc_mvp.utils.ActivityRule;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,7 @@ import static org.hamcrest.Matchers.not;
 /**
  * Created by rohan on 27/5/16.
  */
+@RunWith(AndroidJUnit4.class)
 public class RepositoryListActivityTest {
     private RepositoryListActivity activity;
 

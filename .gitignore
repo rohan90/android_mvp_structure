@@ -4,7 +4,7 @@
 .DS_Store
 /build
 /app/build
-/gradle
-gradlew.bat
-gradlew
+#/gradle
+#gradlew.bat
+#gradlew
 *.iml

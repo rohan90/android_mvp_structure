@@ -1,6 +1,6 @@
 package com.rohan.poc_mvp.communication.events;
 
-import com.rohan.poc_mvp.model.Repository;
+import com.rohan.poc_mvp.model.domain.Repository;
 
 import java.util.List;
 

@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -36,7 +37,8 @@ public class MainActivityTest {
 
     @Test
     public void shouldLaunchRepositoryListActivity() throws InterruptedException {
-        onView(withId(R.id.et_github_username)).perform(typeText("username\n"));
+        onView(withId(R.id.et_github_username)).perform(typeText("username"),closeSoftKeyboard());
+        Thread.sleep(2000);
         onView(withId(R.id.btn_search)).perform(click());
         Thread.sleep(3000);
         onView(withId(R.id.toolbar)).check(matches(isDisplayed()));

@@ -41,7 +41,7 @@ public class CompleteFlowTest {
 
     @Test
     public void shouldCompleteAFullFlow() throws InterruptedException {
-        onView(withId(R.id.tv_moto_or_logo)).check(matches(isDisplayed()));
+//        onView(withId(R.id.tv_moto_or_logo)).check(matches(isDisplayed()));
         Thread.sleep(1000);
         onView(withId(R.id.et_github_username)).perform(typeText("rohan90"),closeSoftKeyboard());
         Thread.sleep(2000);

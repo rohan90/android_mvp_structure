@@ -15,6 +15,7 @@ import com.squareup.otto.Bus;
  */
 public class App extends Application {
     private static Context context;
+    private static TypefaceCollection typeface;
 
     private EventManager mManager;
     private Bus mBus = BusProvider.getInstance();
@@ -23,20 +24,37 @@ public class App extends Application {
         return App.context;
     }
 
+    public static TypefaceCollection getTypeface() {
+        return typeface;
+    }
+
+    public static TypefaceCollection getEnglishTypeface() {
+        return typeface;
+    }
+
+
     @Override
     public void onCreate() {
         super.onCreate();
 
-        TypefaceCollection typeface = new TypefaceCollection.Builder()
+        initTypefaces();
+
+        App.context = getApplicationContext();
+
+        initEventManager();
+    }
+
+    private void initEventManager() {
+        mManager = new EventManager(this, mBus);
+        mBus.register(mManager);
+        mBus.register(this);
+    }
+
+    private void initTypefaces() {
+        typeface = new TypefaceCollection.Builder()
         .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(), "fonts/gotham/Gotham-Rounded-Book.ttf"))
         .set(Typeface.BOLD, Typeface.createFromAsset(getAssets(), "fonts/gotham/Gotham-Rounded-Bold.ttf"))
         .create();
         TypefaceHelper.init(typeface);
-
-        App.context = getApplicationContext();
-
-        mManager = new EventManager(this, mBus);
-        mBus.register(mManager);
-        mBus.register(this);
     }
 }

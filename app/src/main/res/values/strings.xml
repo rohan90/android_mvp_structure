@@ -9,4 +9,6 @@
     <string name="text_stars">%d \nStars</string>
     <string name="text_watchers">%d \nWatchers</string>
     <string name="text_forks">%d \nForks</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
 </resources>

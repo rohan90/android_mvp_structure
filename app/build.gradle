@@ -4,6 +4,19 @@ apply plugin: 'jacoco-android'
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
+    signingConfigs {
+        production {
+            try {
+                storeFile file(".jks")
+                storePassword KEYSTORE_PASSWORD
+                keyAlias KEY_ALIAS
+                keyPassword KEY_PASSWORD
+            }
+            catch (ex) {
+                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            }
+        }
+    }
 
     defaultConfig {
         applicationId "com.rohan.poc_mvp"
@@ -16,14 +29,23 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            manifestPlaceholders = [appName: "POC_MVP_N"]
+            debuggable false
+//            signingConfig signingConfigs.production
+
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            manifestPlaceholders = [appName: "POC_MVP_N-D"]
+            applicationIdSuffix ".debug"
             testCoverageEnabled true
-//            shrinkResources true
-//            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.production
+
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
